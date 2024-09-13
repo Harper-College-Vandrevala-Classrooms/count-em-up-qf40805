@@ -29,16 +29,16 @@ public class GroceryCounter {
         if (tens > 0) {
             counter -= 10;
         } else {
-            counter = (counter + (maxCounter + 1) - 10) % (maxCounter + 1); // Wrap around
+            counter = Math.max(0, counter - 10);
         }
     }
 
     // Method to decrement the ones place
     public void decrementOnes() {
-        if (counter % 10 > 0) {
+        if (counter > 0) {
             counter--;
         } else {
-            counter = (counter + (maxCounter + 1) - 1) % (maxCounter + 1); // Wrap around
+            counter = 0;
         }
     }
 
